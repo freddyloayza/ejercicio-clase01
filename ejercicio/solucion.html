@@ -1,0 +1,51 @@
+<html>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+
+
+
+    <h5>DIagram de clases</h5>
+    <div class="mermaid" style="color: aquamarine" >
+        classDiagram
+
+        class Equipo
+        Equipo : +Long id
+        Equipo : +String nombre
+        Equipo : +String tipo_deporte
+        Equipo : +String siglas
+        Equipo : +String num_jugadores
+        Equipo : +competir()
+
+        class Jugador
+        Jugador : +Long id
+        Jugador : +String nombre
+        Jugador : +String apellido
+        Jugador : +Bigdecimal salario
+        Jugador : +String identificacion
+        Jugador : +String posision
+        Jugador : +String numero
+        Jugador : +dar_baja(identificacion)
+        Jugador : +habiltar(identificacion)
+        Jugador : +calcular_salario(identificacion)
+
+
+
+        class Sancion
+        Sancion : +Long id
+        Sancion : +String observacion
+        Sancion : +String multa
+        Sancion : +Bigdecimal valor
+        Sancion : +String tipo
+        Sancion : +calcular_multa(amount)
+
+        Equipo "1" --> "*" Jugador
+        Jugador "1" --> "*" Sancion
+
+    </div>
+</body>
+
+</html>
